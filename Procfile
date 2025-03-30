@@ -1,0 +1,1 @@
+web: python dashboard/admin_dashboard.py
