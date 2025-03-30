@@ -107,8 +107,7 @@ app.layout = html.Div([
             html.H2("Logs en Temps Réel"),
             dcc.Textarea(id="logs", value="Chargement des logs...", className="log-textarea", readOnly=True),
         ], className="card"),
-    ],
-        ], className="main-content"),
+    ], className="main-content"),
 
     html.Footer([
         html.P("© 2023 - Tableau de Bord d'Investissement Automatisé")
