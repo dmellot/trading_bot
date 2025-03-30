@@ -106,7 +106,7 @@ def update_logs(n):
 
 # Lancer l'application
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run(debug=True)
 
 import subprocess
 
