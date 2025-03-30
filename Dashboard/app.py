@@ -1,9 +1,16 @@
+import os
 import dash
-from dash import dcc, html
-from dash.dependencies import Input, Output
-import plotly.express as px
+from dash import dcc, html, Input, Output
+from dash.exceptions import PreventUpdate
+import plotly.graph_objs as go
 import pandas as pd
+from dotenv import load_dotenv
 from utils.api_utils import fetch_real_time_data
+
+fig = go.Figure(data=[go.Scatter(x=[1, 2, 3], y=[4, 1, 2])])
+
+# Charger les variables d'environnement
+load_dotenv()
 
 # Initialisation de l'application Dash
 app = dash.Dash(
@@ -50,6 +57,8 @@ app.layout = html.Div([
             dcc.Textarea(id="logs", value="Chargement des logs...", className="log-textarea", readOnly=True),
         ], className="card"),
     ], className="main-content"),
+
+    
 
     html.Footer([
         html.P("© 2023 - Tableau de Bord d'Investissement Automatisé")
@@ -99,7 +108,7 @@ def update_asset_allocation(_):
 def update_bot_status(start_clicks, stop_clicks):
     ctx = dash.callback_context
     if not ctx.triggered:
-        return "Statut du Bot : Inactif"
+        raise PreventUpdate
     button_id = ctx.triggered[0]['prop_id'].split('.')[0]
     if button_id == "start-dca-bot":
         return "Statut du Bot : Actif"

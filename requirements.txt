@@ -1,7 +1,8 @@
-ccxt
-pandas
-numpy
-TA-Lib
 dash
+dash-bootstrap-components
+pandas
 plotly
-flask
+ccxt
+python-dotenv
+flask-socketio  # Pour les notifications en temps réel
+pytest          # Pour les tests
