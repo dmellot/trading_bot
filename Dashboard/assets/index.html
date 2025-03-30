@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord d'Investissement</title>
+    <!-- Feuille de style CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Tableau de Bord d'Investissement Automatisé</h1>
+            <p>Gérez vos actifs et suivez vos performances en temps réel.</p>
+            <div class="theme-toggle">
+                <i class="fas fa-moon" id="dark-mode-toggle"></i>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Portfolio Overview -->
+            <section class="card">
+                <h2>Valeur Totale du Portefeuille</h2>
+                <div id="portfolio-value-graph" class="chart-container"></div>
+            </section>
+
+            <!-- Asset Allocation -->
+            <section class="card">
+                <h2>Répartition Actuelle des Actifs</h2>
+                <div id="asset-allocation-graph" class="chart-container"></div>
+            </section>
+
+            <!-- Bot Management -->
+            <section class="card">
+                <h2>Gestion des Bots</h2>
+                <div class="button-group">
+                    <button id="start-dca-bot" class="btn btn-primary">Démarrer Bot DCA</button>
+                    <button id="stop-dca-bot" class="btn btn-danger">Arrêter Bot DCA</button>
+                </div>
+                <div id="bot-status" class="status-message">Statut du Bot : Inactif</div>
+            </section>
+
+            <!-- Logs -->
+            <section class="card">
+                <h2>Logs en Temps Réel</h2>
+                <textarea id="log-textarea" class="log-textarea" readonly></textarea>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 - Tableau de Bord d'Investissement Automatisé</p>
+            <p>Créée par Breizh Art Studio</p>
+        </footer>
+    </div>
+
+    <!-- Script JS pour interactivité -->
+    <script src="script.js"></script>
+</body>
+</html>
